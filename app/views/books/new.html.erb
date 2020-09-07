@@ -1,0 +1,20 @@
+<h1>Create a new book data</h1>
+<% if @book.errors.any? %>
+  <h2>The following errors prevented the form from saving!!</h2>
+  <ul>
+  <% @book.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+<%= form_with scope: :book, url: books_path, local: true do |f| %>
+  <div>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :description, "Description" %>
+    <%= f.text_area :description %>
+  </div>
+  <%= f.submit "Submit", disable_with: 'Submiting...' %>
+<% end %>
