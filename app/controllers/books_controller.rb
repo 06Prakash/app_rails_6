@@ -1,8 +1,7 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :update, :edit, :destroy]
+  before_action :set_book, only: %i[show update edit destroy]
 
-  def show
-  end
+  def show; end
 
   def index
     @books = Book.all
@@ -15,8 +14,8 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      flash[:notice] = "Book details got added to database!!"
-      redirect_to @book 
+      flash[:notice] = 'Book details got added to database!!'
+      redirect_to @book
     else
       render 'new'
     end
@@ -24,15 +23,14 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      flash[:notice] = "Book Details got updated successfully!!"
+      flash[:notice] = 'Book Details got updated successfully!!'
       redirect_to @book
     else
       render 'edit'
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def destroy
     @book.destroy
