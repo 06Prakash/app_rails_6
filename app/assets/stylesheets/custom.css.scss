@@ -1,4 +1,4 @@
-@import 'bootstrap/dist/css/bootstrap';
+@import 'bootstrap/scss/bootstrap';
 
 .navbar {
   background-color: #a7e8ed !important;
@@ -7,9 +7,9 @@
 .navbar-brand {
   font-size: 2.5rem;
 }
-  
+
 h1 {
-  color: rgba(0, 187, 255, 0.646);
+  color: rgba(2, 30, 41, 0.646);
 }
 
 li.nav-item > a:hover
